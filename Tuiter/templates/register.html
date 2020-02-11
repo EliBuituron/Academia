@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <form action="/" method="POST">
+    <form action="/register" method="POST">
         <label>User: <input type="text" name="username"/></label><br>
         <br>
         <label>Password: <input type="password" name="password"/></label><br>
         <br>
-        <input type="submit" value="Login"/>
+        <input type="submit" value="Registrarse"/>
     </form>
     <br>
-    <h3><a href='/register'>Registrarse</a></h3>
+    <h3><a href='/'>Volver al inicio</a></h3>
 {% endblock %}
