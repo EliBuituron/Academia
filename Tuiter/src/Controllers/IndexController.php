@@ -11,13 +11,20 @@ class IndexController implements \Tuiter\Interfaces\Controller {
 
         $app->get('/', function (Request $request, Response $response, array $args) {
     
+            $template = $request->getAttribute("twig")->load('login.html');
+            $response->getBody()->write($template->render());
+            return $response;
+        });
+
+        $app->post('/', function (Request $request, Response $response, array $args) {
+    
             $template = $request->getAttribute("twig")->load('index.html');
 
             $response->getBody()->write(
                 $template->render(['name' => 'Dario'])
             );
             return $response;
-        })->add();
+        });
 
     }
 
