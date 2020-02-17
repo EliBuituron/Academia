@@ -5,7 +5,6 @@ namespace TestTuiter\Services;
 use \Tuiter\Services\UserService;
 
 final class UserServiceTest extends \PHPUnit\Framework\TestCase {
-    private $collection;
 
     protected function setUp(): void{
         $conn = new \MongoDB\Client("mongodb://localhost");

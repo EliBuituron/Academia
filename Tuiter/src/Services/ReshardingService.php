@@ -4,8 +4,8 @@ namespace Tuiter\Services;
 
 class ReshardingService {
     
-    public function reshardingUsers(array $where, array $to){
-        foreach($where as $collection){
+    public function reshardingUsers(array $from, array $to){
+        foreach($from as $collection){
             $data = $collection->find();
             foreach($data as $content){
                 $us = new \Tuiter\Services\UserService($to);
