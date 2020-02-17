@@ -9,7 +9,11 @@ class ReshardingService {
             $data = $collection->find();
             foreach($data as $content){
                 $us = new \Tuiter\Services\UserService($to);
-                $us->register($content['userId'],$content['name'],$content['password']);
+                $us->register(
+                    $content['userId'],
+                    $content['name'],
+                    $content['password']
+                );
             }
             $collection->deleteMany([]);
         }
